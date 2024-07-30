@@ -1,4 +1,4 @@
-import { Center, Stack, useToast } from "@chakra-ui/react";
+import { Center, VStack, Stack, useToast } from "@chakra-ui/react";
 import { useState } from "react";
 import axios from "axios";
 import Nav from "../components/Nav";
@@ -64,54 +64,69 @@ export default function Contact() {
         <video alt="Background Video" className="video" autoPlay muted loop>
           <source src="/home-video.mp4" type="video/mp4" />
         </video>
-        <Stack direction={["column", "row"]} className="contact-us-component">
-          <div className="rectangle contact">
-            <img src="/contact.webp" alt="About Us Image 2" />
+
+        <VStack>
+          <div className="contact-details">
+            <p>
+              <a href="mailto:support@plusconsulting.in" target="_blank">
+                support@plusconsulting.in
+              </a>
+            </p>
+            <p>
+              <a href="tel:+917358040770" target="_blank">
+                +91 73580 40770
+              </a>
+            </p>
           </div>
-          <div className="contact-us">
-            <h1>Contact Us!</h1>
-            <form onSubmit={handleSubmit} className="contact-form">
-              <input
-                type="text"
-                name="name"
-                placeholder="Name"
-                value={formData.name}
-                onChange={handleChange}
-                required
-                className="contact-input"
-              />
-              <input
-                type="email"
-                name="email"
-                placeholder="Email ID"
-                value={formData.email}
-                onChange={handleChange}
-                required
-                className="contact-input"
-              />
-              <input
-                type="text"
-                name="subject"
-                placeholder="Subject"
-                value={formData.subject}
-                onChange={handleChange}
-                required
-                className="contact-input"
-              />
-              <textarea
-                name="message"
-                placeholder="Message"
-                value={formData.message}
-                onChange={handleChange}
-                required
-                className="contact-input contact-message"
-              />
-              <button type="submit" className="contact-input contact-submit">
-                Send
-              </button>
-            </form>
-          </div>
-        </Stack>
+          <Stack direction={["column", "row"]} className="contact-us-component">
+            <div className="rectangle contact">
+              <img src="/contact.webp" alt="About Us Image 2" />
+            </div>
+            <div className="contact-us">
+              <h1>Contact Us!</h1>
+              <form onSubmit={handleSubmit} className="contact-form">
+                <input
+                  type="text"
+                  name="name"
+                  placeholder="Name"
+                  value={formData.name}
+                  onChange={handleChange}
+                  required
+                  className="contact-input"
+                />
+                <input
+                  type="email"
+                  name="email"
+                  placeholder="Email ID"
+                  value={formData.email}
+                  onChange={handleChange}
+                  required
+                  className="contact-input"
+                />
+                <input
+                  type="text"
+                  name="subject"
+                  placeholder="Subject"
+                  value={formData.subject}
+                  onChange={handleChange}
+                  required
+                  className="contact-input"
+                />
+                <textarea
+                  name="message"
+                  placeholder="Message"
+                  value={formData.message}
+                  onChange={handleChange}
+                  required
+                  className="contact-input contact-message"
+                />
+                <button type="submit" className="contact-input contact-submit">
+                  Send
+                </button>
+              </form>
+            </div>
+          </Stack>
+        </VStack>
       </Center>
       <Footer />
     </>

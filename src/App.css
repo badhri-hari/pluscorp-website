@@ -909,3 +909,45 @@ ul {
 .partner-overlay::-webkit-scrollbar {
   display: none;
 }
+
+.contact-details {
+  position: relative;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  height: 62%;
+  width: 50%;
+  background: rgba(255, 255, 255, 0);
+  border-radius: 15px;
+  padding: 35px;
+  box-shadow: 0 0 1px white, inset 0 0 1px white;
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+  color: white;
+  font-family: "arvo-regular", sans-serif;
+  z-index: 2;
+  font-size: 1.2rem;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+  overflow-y: scroll;
+  margin-top: 6vh;
+}
+
+.contact-details {
+  height: 20vh;
+  width: 88%;
+  background: rgba(255, 255, 255, 0);
+  border-radius: 15px;
+  box-shadow: 0 0 1px white, inset 0 0 1px white;
+  font-size: 1.5rem;
+  text-align: center;
+  align-content: center;
+}
+
+.contact-details > p {
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
+.contact-details::-webkit-scrollbar {
+  display: none;
+}
