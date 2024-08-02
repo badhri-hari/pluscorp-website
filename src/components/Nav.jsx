@@ -2,7 +2,6 @@ import {
   Box,
   HStack,
   Center,
-  Link,
   VStack,
   Drawer,
   DrawerBody,
@@ -15,6 +14,7 @@ import { FaInstagram, FaLinkedin, FaFacebook } from "react-icons/fa";
 import { IoAtSharp, IoCloseOutline } from "react-icons/io5";
 import { Tooltip } from "react-tooltip";
 import { useEffect } from "react";
+import { NavLink } from "react-router-dom";
 
 export default function Nav() {
   const { isOpen, onOpen, onClose } = useDisclosure();
@@ -110,18 +110,38 @@ export default function Nav() {
               </Center>
             </Box>
             <HStack className="nav-hstack" width="100%">
-              <Link href="/" className="nav-links-desktop">
+              <NavLink
+                to="/"
+                className={({ isActive }) =>
+                  `nav-links-desktop ${isActive ? "active" : ""}`
+                }
+              >
                 Home
-              </Link>
-              <Link href="/partner" className="nav-links-desktop">
+              </NavLink>
+              <NavLink
+                to="/partner"
+                className={({ isActive }) =>
+                  `nav-links-desktop ${isActive ? "active" : ""}`
+                }
+              >
                 Why Partner With Us?
-              </Link>
-              <Link href="/services" className="nav-links-desktop">
+              </NavLink>
+              <NavLink
+                to="/services"
+                className={({ isActive }) =>
+                  `nav-links-desktop ${isActive ? "active" : ""}`
+                }
+              >
                 Our Services
-              </Link>
-              <Link href="/contact" className="nav-links-desktop CTA">
+              </NavLink>
+              <NavLink
+                to="/contact"
+                className={({ isActive }) =>
+                  `nav-links-desktop CTA ${isActive ? "active" : ""}`
+                }
+              >
                 Contact Us
-              </Link>
+              </NavLink>
               <HStack spacing="0.8rem" className="nav-icons-container-desktop">
                 <a href="mailto:support@plusconsulting.in" target="blank">
                   <IoAtSharp
@@ -206,30 +226,42 @@ export default function Nav() {
           >
             <DrawerBody>
               <VStack spacing="2rem">
-                <Link href="/" className="nav-links-mobile" onClick={onClose}>
+                <NavLink
+                  to="/"
+                  className={({ isActive }) =>
+                    `nav-links-mobile ${isActive ? "active" : ""}`
+                  }
+                  onClick={onClose}
+                >
                   Home
-                </Link>
-                <Link
-                  href="/partner"
-                  className="nav-links-mobile"
+                </NavLink>
+                <NavLink
+                  to="/partner"
+                  className={({ isActive }) =>
+                    `nav-links-mobile ${isActive ? "active" : ""}`
+                  }
                   onClick={onClose}
                 >
                   Why Partner With Us?
-                </Link>
-                <Link
-                  href="/services"
-                  className="nav-links-mobile"
+                </NavLink>
+                <NavLink
+                  to="/services"
+                  className={({ isActive }) =>
+                    `nav-links-mobile ${isActive ? "active" : ""}`
+                  }
                   onClick={onClose}
                 >
                   Our Services
-                </Link>
-                <Link
-                  href="/contact"
-                  className="nav-links-mobile"
+                </NavLink>
+                <NavLink
+                  to="/contact"
+                  className={({ isActive }) =>
+                    `nav-links-mobile ${isActive ? "active" : ""}`
+                  }
                   onClick={onClose}
                 >
                   Contact Us
-                </Link>
+                </NavLink>
                 <HStack spacing="1rem" className="nav-icons-container-mobile">
                   <a
                     href="mailto:support@plusconsulting.in"
