@@ -194,7 +194,7 @@ export default function Nav() {
           </Center>
         </nav>
 
-        <Drawer isOpen={isOpen} onClose={onClose} style={{ zIndex: 5000 }}>
+        <Drawer isOpen={isOpen} onClose={onClose} className="drawer">
           <DrawerOverlay />
           <DrawerContent
             bg="#f80100"
@@ -210,6 +210,13 @@ export default function Nav() {
                   Home
                 </Link>
                 <Link
+                  href="/partner"
+                  className="nav-links-mobile"
+                  onClick={onClose}
+                >
+                  Why Partner With Us?
+                </Link>
+                <Link
                   href="/services"
                   className="nav-links-mobile"
                   onClick={onClose}
@@ -218,7 +225,7 @@ export default function Nav() {
                 </Link>
                 <Link
                   href="/contact"
-                  className="nav-links-mobile CTA"
+                  className="nav-links-mobile"
                   onClick={onClose}
                 >
                   Contact Us

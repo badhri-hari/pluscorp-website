@@ -78,7 +78,10 @@ export default function Contact() {
               </a>
             </p>
           </div>
-          <Stack direction={["column", "row"]} className="contact-us-component">
+          <Stack
+            direction={{ base: "column", md: "row" }}
+            className="contact-us-component"
+          >
             <div className="rectangle contact">
               <img src="/contact.webp" alt="About Us Image 2" />
             </div>
@@ -129,6 +132,17 @@ export default function Contact() {
         </VStack>
       </Center>
       <Footer />
+      <style jsx>{`
+        .contact-us-component {
+          width: 100%;
+        }
+
+        @media (max-width: 756px) {
+          .contact-us-component {
+            flex-direction: column !important;
+          }
+        }
+      `}</style>
     </>
   );
 }
