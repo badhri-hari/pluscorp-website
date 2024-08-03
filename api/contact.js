@@ -17,7 +17,7 @@ export default async (req, res) => {
 
     const mailOptions = {
       from: email,
-      to: "support@plusconsulting.in",
+      to: "average.runner216@gmail.com",
       subject: subject,
       text: `Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`,
     };
