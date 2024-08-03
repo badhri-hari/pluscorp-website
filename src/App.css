@@ -195,8 +195,8 @@ nav,
 }
 
 .active {
-  background: rgb(56, 44, 44);
-  border-radius: 15px;
+  background: rgba(0, 0, 0, 0.25);
+  border-radius: 5px;
 }
 
 .active:hover {
