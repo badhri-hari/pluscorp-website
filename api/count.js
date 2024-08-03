@@ -11,11 +11,7 @@ const dbName = process.env.DB_NAME;
 let cachedClient = null;
 
 const connectToDatabase = async () => {
-  if (
-    cachedClient &&
-    cachedClient.topology &&
-    cachedClient.topology.isConnected()
-  ) {
+  if (cachedClient && cachedClient.isConnected()) {
     return cachedClient;
   }
 
@@ -35,43 +31,46 @@ const connectToDatabase = async () => {
 };
 
 export default async (req, res) => {
-  if (req.method === "GET") {
-    try {
-      const client = await connectToDatabase();
-      const db = client.db(dbName);
-      const collection = db.collection("COUNT_COLLECTION");
+  if (req.method !== "GET") {
+    res.setHeader("Allow", ["GET"]);
+    return res.status(405).end(`Method ${req.method} Not Allowed`);
+  }
 
-      const countDoc = await collection.findOne({ _id: "websiteVisits" });
+  try {
+    const client = await connectToDatabase();
+    const db = client.db(dbName);
+    const collection = db.collection("COUNT_COLLECTION");
 
-      const cookies = cookie.parse(req.headers.cookie || "");
-      const sessionCookie = cookies.session_id;
+    const countDoc = await collection.findOne({ _id: "websiteVisits" });
 
-      if (!sessionCookie) {
-        const sessionId = uuidv4();
-        res.setHeader("Set-Cookie", cookie.serialize("session_id", sessionId, {
+    const cookies = cookie.parse(req.headers.cookie || "");
+    const sessionCookie = cookies.session_id;
+
+    if (!sessionCookie) {
+      const sessionId = uuidv4();
+      res.setHeader(
+        "Set-Cookie",
+        cookie.serialize("session_id", sessionId, {
           maxAge: 900000,
           httpOnly: true,
           path: "/",
-        }));
+        })
+      );
 
-        const newCount = countDoc ? countDoc.count + 1 : 1;
-        await collection.updateOne(
-          { _id: "websiteVisits" },
-          { $set: { count: newCount } },
-          { upsert: true }
-        );
-        res.status(200).json({ count: newCount });
-      } else {
-        res.status(200).json({ count: countDoc ? countDoc.count : 0 });
-      }
-    } catch (err) {
-      console.error("Error fetching data:", err);
-      res
-        .status(500)
-        .json({ error: "Internal server error", details: err.message });
+      const newCount = countDoc ? countDoc.count + 1 : 1;
+      await collection.updateOne(
+        { _id: "websiteVisits" },
+        { $set: { count: newCount } },
+        { upsert: true }
+      );
+      return res.status(200).json({ count: newCount });
+    } else {
+      return res.status(200).json({ count: countDoc ? countDoc.count : 0 });
     }
-  } else {
-    res.setHeader("Allow", ["GET"]);
-    res.status(405).end(`Method ${req.method} Not Allowed`);
+  } catch (err) {
+    console.error("Error fetching data:", err);
+    return res
+      .status(500)
+      .json({ error: "Internal server error", details: err.message });
   }
 };
