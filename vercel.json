@@ -1,16 +1,16 @@
 {
   "rewrites": [{ "source": "/(.*)", "destination": "/" }],
+  "functions": {
+    "api/count.js": {
+      "maxDuration": 30
+    },
+    "api/contact.js": {
+      "maxDuration": 30
+    }
+  },
   "headers": [
     {
       "source": "/(.*)",
-      "functions": {
-        "api/count.js": {
-          "maxDuration": 30
-        },
-        "api/contact.js": {
-          "maxDuration": 30
-        }
-      },
       "headers": [
         {
           "key": "Strict-Transport-Security",
