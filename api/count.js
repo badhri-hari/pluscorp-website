@@ -22,7 +22,6 @@ const connectToDatabase = async () => {
   const client = new MongoClient(uri, {
     tls: true,
     tlsAllowInvalidCertificates: true,
-    useUnifiedTopology: true,
   });
 
   try {
