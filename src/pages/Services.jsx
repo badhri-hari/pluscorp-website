@@ -1,7 +1,7 @@
 import Head from "../components/Head";
 import Footer from "../components/Footer";
 import Nav from "../components/Nav";
-import { Center } from "@chakra-ui/react";
+import { Center, VStack } from "@chakra-ui/react";
 import Cursor from "../components/Cursor";
 
 export default function Services() {
@@ -62,8 +62,9 @@ export default function Services() {
       <Nav />
       <Cursor />
       <video alt="Background Video" className="video" autoPlay muted loop>
-        <source src="/home-video.mp4" type="video/mp4" />
+        <source src="/services-video.mp4" type="video/mp4" />
       </video>
+      <div className="page-header-services">Our Services</div>
       <div className="services-heading">
         <h1>Recruitment Services</h1>
         <p>
@@ -76,20 +77,29 @@ export default function Services() {
         <div>Across all levels (Fresher to CFO)</div>
       </div>
       <Center>
-        <div className="members-founders-container">
-          {services.map((service, index) => (
-            <div key={index} className="members-founders-card">
-              <div className="members-founders-card-container">
-                <div className="members-founders-card-text-container">
-                  <h1>{service.name}</h1>
-                  <p>{service.info}</p>
-                  <br />
-                  <p>{service.detail}</p>
+        <VStack>
+          <div className="services-image-container">
+            <img
+              className="services-image"
+              alt="Our Services Photo"
+              src="/services-image.webp"
+            />
+          </div>
+          <div className="members-founders-container">
+            {services.map((service, index) => (
+              <div key={index} className="members-founders-card">
+                <div className="members-founders-card-container">
+                  <div className="members-founders-card-text-container">
+                    <h1>{service.name}</h1>
+                    <p>{service.info}</p>
+                    <br />
+                    <p>{service.detail}</p>
+                  </div>
                 </div>
               </div>
-            </div>
-          ))}
-        </div>
+            ))}
+          </div>
+        </VStack>
       </Center>
       <Footer />
     </>

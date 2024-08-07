@@ -61,8 +61,14 @@ export default function Contact() {
       <Nav />
       <Cursor />
       <Center>
-        <video alt="Background Video" className="video" autoPlay muted loop>
-          <source src="/home-video.mp4" type="video/mp4" />
+        <video
+          alt="Background Video"
+          className="video contact-video"
+          autoPlay
+          muted
+          loop
+        >
+          <source src="/contact-video.mp4" type="video/mp4" />
         </video>
 
         <VStack>

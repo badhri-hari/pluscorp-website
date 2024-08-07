@@ -17,7 +17,7 @@ export default function Home() {
       <Cursor />
 
       <video alt="Background Video" className="video" autoPlay muted loop>
-        <source src="/home-video.mp4" type="video/mp4" />
+        <source src="/partner-video.mp4" type="video/mp4" />
       </video>
 
       <VStack className="about-mission-overlay">
@@ -25,7 +25,7 @@ export default function Home() {
           <div className="about-us">
             <p
               style={{
-                fontSize: "1.4rem",
+                fontSize: "2rem",
                 marginBottom: "12px",
               }}
             >
@@ -33,13 +33,13 @@ export default function Home() {
             </p>
             <p
               style={{
-                fontSize: "3rem",
+                fontSize: "5rem",
                 marginBottom: "20px",
               }}
             >
-              PLUSCORP CONSULTING
+              PLUSCORP CONSULTING IS READY TO TAKE YOU HIGHER
             </p>
-            <div>
+            <div style={{ lineHeight: "33px" }}>
               Pluscorp Consulting offers a wide range of consulting services for
               several industries. We’ve got the necessary tools and expertise to
               help you grow your business, and learn how to properly manage your

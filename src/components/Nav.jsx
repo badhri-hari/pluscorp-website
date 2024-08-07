@@ -46,7 +46,7 @@ export default function Nav() {
       if (e.clientY <= headerRect.bottom && e.clientY >= headerRect.top) {
         let closestLink = null;
         let closestDistance = Infinity;
-        const snapThreshold = 90;
+        const snapThreshold = 0;
 
         links.forEach((link) => {
           const linkRect = link.getBoundingClientRect();
@@ -145,7 +145,7 @@ export default function Nav() {
               <HStack spacing="0.8rem" className="nav-icons-container-desktop">
                 <a href="mailto:support@plusconsulting.in" target="blank">
                   <IoAtSharp
-                    color="white"
+                    color="red"
                     size="2em"
                     className="nav-email-container-desktop"
                     data-tooltip-id="my-tooltip"
@@ -163,7 +163,7 @@ export default function Nav() {
                   target="blank"
                 >
                   <FaLinkedin
-                    color="white"
+                    color="#0072b1"
                     size="2em"
                     className="nav-signup-container-desktop"
                     data-tooltip-id="my-tooltip"
@@ -180,7 +180,7 @@ export default function Nav() {
                   target="blank"
                 >
                   <FaInstagram
-                    color="white"
+                    color="#ff6e6e"
                     size="2em"
                     className="nav-instagram-container-desktop"
                     data-tooltip-id="my-tooltip"
@@ -197,7 +197,7 @@ export default function Nav() {
                   target="blank"
                 >
                   <FaFacebook
-                    color="white"
+                    color="#386cf4"
                     size="2em"
                     className="nav-signup-container-desktop"
                     data-tooltip-id="my-tooltip"
@@ -217,7 +217,7 @@ export default function Nav() {
         <Drawer isOpen={isOpen} onClose={onClose} className="drawer">
           <DrawerOverlay />
           <DrawerContent
-            bg="#f80100"
+            bg="#d00000"
             style={{
               alignItems: "center",
               justifyItems: "center",

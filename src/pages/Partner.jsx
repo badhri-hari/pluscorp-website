@@ -22,6 +22,7 @@ export default function Partner() {
 
       <div className="home-container">
         <VStack className="partner-overlay">
+          <div className="page-header">Partner With Us</div>
           <Stack
             direction={["column", "row"]}
             divider={<StackDivider borderColor="gray.200" />}
@@ -44,17 +45,17 @@ export default function Partner() {
               </p>
               <br />
               <p>
-                <strong>About the Founder</strong>: Raghuraman Chandrasekaran
-                (aka) Raghu is a Chartered Accountant and a Management
-                Accountant by Qualification. He formed Pluscorp Consulting in
-                2016 after successful stints in Wipro, ICICI, Satyam, CSC and
-                Sutherland spanning to 2 decades. A thorough rounded
-                professional with a Six Sigma Greenbelt certification who also
-                possesses wide range of experience in multiple Industries like
-                Finance, Banking, Treasury, Core Banking, BPO and Audit
-                verticals. Very well networked and has managed large teams. He
-                has an extensive Outsourcing experience both in Captive and
-                Third party environments.
+                About the Founder: Raghuraman Chandrasekaran (aka) Raghu is a
+                Chartered Accountant and a Management Accountant by
+                Qualification. He formed Pluscorp Consulting in 2016 after
+                successful stints in Wipro, ICICI, Satyam, CSC and Sutherland
+                spanning to 2 decades. A thorough rounded professional with a
+                Six Sigma Greenbelt certification who also possesses wide range
+                of experience in multiple Industries like Finance, Banking,
+                Treasury, Core Banking, BPO and Audit verticals. Very well
+                networked and has managed large teams. He has an extensive
+                Outsourcing experience both in Captive and Third party
+                environments.
               </p>
             </div>
           </Stack>
@@ -68,41 +69,29 @@ export default function Partner() {
               <div>
                 <ul>
                   <li>
-                    <strong>
-                      Deliver basis Organization requirement and values
-                    </strong>{" "}
-                    – Understand the Organization Business, Style, Requirement
-                    and Criticality first before scouting
+                    Deliver basis Organization requirement and values –
+                    Understand the Organization Business, Style, Requirement and
+                    Criticality first before scouting
                   </li>
                   <br />
                   <li>
-                    <strong>Determined to keep standards high</strong> –
-                    Maintain Quality of candidates with high strike rate
+                    Determined to keep standards high – Maintain Quality of
+                    candidates with high strike rate
                   </li>
                   <br />
                   <li>
-                    <strong>Solution Based</strong> - Tailored recruitment to
-                    suit your requirements
+                    Solution Based - Tailored recruitment to suit your
+                    requirements
                   </li>
                   <br />
-                  <li>
-                    <strong>Result Focused</strong> – Ensure high % success
-                    factor
-                  </li>
+                  <li>Result Focused – Ensure high % success factor</li>
+                  <br />
+                  <li>Repeat Business – Maintain high Quality standards</li>
+                  <br />
+                  <li>Partnering Approach - 1 point of contact, Pan India</li>
                   <br />
                   <li>
-                    <strong>Repeat Business</strong> – Maintain high Quality
-                    standards
-                  </li>
-                  <br />
-                  <li>
-                    <strong>Partnering Approach</strong> - 1 point of contact,
-                    Pan India
-                  </li>
-                  <br />
-                  <li>
-                    <strong>Extensive use of Social media</strong> – LinkedIn,
-                    Facebook etc
+                    Extensive use of Social media – LinkedIn, Facebook etc
                   </li>
                 </ul>
               </div>

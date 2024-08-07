@@ -1,6 +1,13 @@
 @font-face {
-  font-family: "Fellbaum Grotesk";
-  src: url("/otr-type/OTR type/fonts/otf/OTRtypeGX.ttf") format("truetype");
+  font-family: "fellbaum-grotesk-regular";
+  src: url("../public/fellbaum-grotesk/FellbaumGrotesk-Medium.ttf")
+    format("truetype");
+}
+
+@font-face {
+  font-family: "fellbaum-grotesk-bold";
+  src: url("../public/fellbaum-grotesk/FellbaumGrotesk-Bold.ttf")
+    format("truetype");
 }
 
 * {
@@ -8,7 +15,7 @@
   cursor: none;
   --rt-color-info: #f80100;
   --rt-opacity: 1;
-  font-family: "arvo-regular", sans-serif;
+  font-family: "fellbaum-grotesk-regular", sans-serif;
 }
 
 a {
@@ -107,12 +114,23 @@ nav,
   width: 50vw;
 }
 
+@media only screen and (max-width: 759px) {
+  nav,
+  .nav-members,
+  .nav-logo-container {
+    margin-top: 3.5vh;
+  }
+
+  .nav-image {
+    margin-top: 0.1vh;
+  }
+}
+
 .glassmorphism-nav {
-  background: rgba(0, 0, 0, 0.6);
+  background: rgba(0, 0, 0, 0.45);
   border-radius: 15px;
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  backdrop-filter: blur(15px);
-  -webkit-backdrop-filter: blur(15px);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   height: 100%;
   width: 100%;
@@ -151,7 +169,8 @@ nav,
   display: flex;
   align-items: center;
   justify-content: center;
-  font-family: "arvo-bold", sans-serif;
+  font-family: "fellbaum-grotesk-bold", sans-serif;
+  font-size: 1.4em;
 }
 
 .CTA {
@@ -178,11 +197,10 @@ nav,
 .nav-email-container-desktop,
 .nav-instagram-container-desktop,
 .nav-signup-container-desktop {
-  margin-right: -5px;
-  padding: 3px;
   border: 5px solid transparent;
   border-radius: 5px;
   transition: all 0.05s linear;
+  background: white;
 }
 
 .nav-email-container-desktop:hover,
@@ -190,8 +208,8 @@ nav,
 .nav-signup-container-desktop:hover {
   padding: 3px;
   border: 5px solid transparent;
-  background-color: rgba(56, 44, 44, 0.5);
-  transform: scale(1.2);
+  background: rgb(255, 255, 255, 0.9);
+  transform: scale(1.1);
 }
 
 .active {
@@ -231,8 +249,12 @@ nav,
 .video {
   position: fixed;
   top: 0;
-  opacity: 0.3;
+  opacity: 0.6;
   height: 165vh;
+}
+
+.contact-video {
+  transform: translateX(10%);
 }
 
 @media only screen and (max-width: 805px) {
@@ -250,7 +272,7 @@ nav,
   }
 
   .glassmorphism-nav {
-    background: #ff0000d2;
+    background: #ff0000b7;
   }
 
   .nav-links-desktop {
@@ -262,14 +284,14 @@ nav,
     font-size: large;
     color: white;
     transition: scale 0.2s ease-in-out, transform 0.3s ease;
-    padding: 10px 20px;
+    padding: 12.5px 20px;
     white-space: nowrap;
     position: relative;
     height: 40px;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-family: "arvo-bold", sans-serif;
+    font-family: "fellbaum-grotesk-bold", sans-serif;
   }
 
   .nav-email-container-desktop,
@@ -291,22 +313,25 @@ nav,
 
   .glassmorphism-nav:hover {
     transform: scale(1);
-    transition: transform 1s;
+    transition: transform 0.05s;
   }
 
   .glassmorphism-nav:active {
     transform: scale(0.95);
-    background-color: #ff0000;
-    transition: all 0.1s;
+    background-color: #ce0000b7;
+    transition: all 0.05s;
+  }
+
+  .video {
+    transform: translateX(-35%);
+  }
+
+  .contact-video {
+    transform: translateX(20%);
   }
 }
 
 @media (pointer: coarse) and (hover: none) {
-  .content-blur {
-    backdrop-filter: blur(0px);
-    -webkit-backdrop-filter: blur(0px);
-  }
-
   .blob {
     opacity: 0;
   }
@@ -352,7 +377,7 @@ nav,
 }
 
 .about-us-component {
-  height: 60%;
+  height: 70%;
   flex-direction: column;
 }
 
@@ -361,16 +386,11 @@ nav,
   position: relative;
   overflow-x: hidden;
   overflow-y: scroll;
-  height: 62%;
   width: 50%;
-  background: rgba(255, 255, 255, 0);
   border-radius: 15px;
   padding: 35px;
-  box-shadow: 0 0 1px white, inset 0 0 1px white;
-  backdrop-filter: blur(15px);
-  -webkit-backdrop-filter: blur(15px);
   color: white;
-  font-family: "arvo-regular", sans-serif;
+  font-family: "fellbaum-grotesk-regular", sans-serif;
   z-index: 2;
   font-size: 1.2rem;
   -ms-overflow-style: none;
@@ -379,13 +399,12 @@ nav,
 }
 
 .about-us {
-  height: 100vh;
+  height: 100%;
   width: 80%;
-  background: rgba(255, 255, 255, 0);
   border-radius: 15px;
-  box-shadow: 0 0 1px white, inset 0 0 1px white;
   font-size: 1.5rem;
   text-align: center;
+  overflow-y: hidden;
 }
 
 .about-us .our-mission::-webkit-scrollbar {
@@ -394,7 +413,7 @@ nav,
 
 .about-us h2,
 .our-mission h2 {
-  font-family: "arvo-bold", sans-serif;
+  font-family: "fellbaum-grotesk-bold", sans-serif;
   font-size: xx-large;
   margin-bottom: 10px;
 }
@@ -411,7 +430,7 @@ nav,
   display: flex;
   align-items: center;
   justify-content: center;
-  border: 3px solid #f80100;
+  border: 0px solid #f80100;
   z-index: 1;
 }
 
@@ -430,7 +449,6 @@ nav,
     height: max-content;
     width: 100vw;
     margin-top: -16vh;
-    margin-bottom: calc(2vh + 10px);
     position: relative;
     overflow: hidden;
   }
@@ -451,7 +469,6 @@ nav,
     flex-wrap: wrap;
     flex-direction: column;
     height: 100%;
-    width: 99%;
   }
 
   .about-us,
@@ -461,14 +478,9 @@ nav,
     overflow-y: scroll;
     height: 300px;
     width: 100%;
-    background: rgba(255, 255, 255, 0);
     border-radius: 15px;
-    padding: 35px;
-    box-shadow: 0 0 1px white, inset 0 0 1px white;
-    backdrop-filter: blur(15px);
-    -webkit-backdrop-filter: blur(15px);
     color: white;
-    font-family: "arvo-regular", sans-serif;
+    font-family: "fellbaum-grotesk-regular", sans-serif;
     z-index: 2;
     font-size: 1.2rem;
     -ms-overflow-style: none;
@@ -498,7 +510,6 @@ nav,
     padding-left: 3vw;
     padding-right: 3vw;
     margin-top: 7vh;
-    margin-bottom: 3vh;
   }
 
   .about-us-component {
@@ -513,36 +524,81 @@ nav,
   }
 }
 
+.page-header {
+  position: relative;
+  height: 30vh;
+  width: 96.5vw;
+  text-align: center;
+  align-content: center;
+  border-radius: 15px;
+  box-shadow: 0 0 0px white, inset 0 0 0px white;
+  backdrop-filter: blur(1px);
+  -webkit-backdrop-filter: blur(1px);
+  color: white;
+  z-index: 2;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+  overflow: auto;
+  font-family: "fellbaum-grotesk-bold", sans-serif;
+  font-size: 40px;
+  font-weight: bolder;
+}
+
+.page-header-services {
+  height: 30vh;
+  width: 93.5vw;
+  text-align: center;
+  align-content: center;
+  border-radius: 15px;
+  box-shadow: 0 0 0px white, inset 0 0 0px white;
+  backdrop-filter: blur(1px);
+  -webkit-backdrop-filter: blur(1px);
+  color: white;
+  z-index: 2;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+  overflow: auto;
+  font-family: "fellbaum-grotesk-bold", sans-serif;
+  font-size: 40px;
+  font-weight: bolder;
+  margin-left: 3vw;
+  margin-top: 6vh;
+}
+
+@media only screen and (max-width: 759px) {
+  .page-header {
+    width: 92vw;
+    margin-top: 18.5vh;
+    margin-bottom: -20vh;
+  }
+
+  .page-header-services {
+    margin-top: 5vh;
+  }
+}
+
 .footer-container {
   width: 100vw;
 }
 
 footer {
   width: 100%;
-  background-color: #f80100;
+  background-color: rgba(248, 0, 0, 0.57);
   align-content: center;
   z-index: 2;
   box-shadow: 0px 0px 10px 10px #0000007e;
 }
 
-.footer-logo {
-  height: 100px;
-  aspect-ratio: 1 / 1;
-  margin-bottom: -2vh;
-  margin-left: 5px;
-}
-
 .footer-text-container {
-  margin-left: 50px;
+  margin-left: 25%;
   font-size: larger;
   color: white;
-  font-family: "arvo-regular", sans-serif;
+  font-family: "fellbaum-grotesk-regular", sans-serif;
   text-align: center;
 }
 
 .copyright {
-  font-size: medium;
-  margin-bottom: 8px;
+  font-size: large;
 }
 
 a {
@@ -552,21 +608,13 @@ a {
 }
 
 @media only screen and (max-width: 759px) {
-  .footer-logo {
-    height: 100px;
-    padding: 10px 0;
-  }
-
   .footer-text-container {
-    padding: 20px 0;
-    font-size: medium;
-    margin-bottom: -3vh;
+    padding: 3.5px;
+    margin-left: 0;
   }
 
   .copyright {
-    margin-right: 10vw;
-    font-size: small;
-    margin-bottom: 0;
+    font-size: medium;
   }
 }
 
@@ -576,8 +624,8 @@ a {
   justify-content: center;
   align-items: center;
   gap: 12px;
-  margin-top: 1vh;
-  margin-bottom: 2vh;
+  margin-top: 1.35vh;
+  margin-bottom: 2.5vh;
   height: 45vh;
   width: 189vh;
   scroll-snap-type: y mandatory;
@@ -585,8 +633,8 @@ a {
   overflow-y: scroll;
   border-radius: 15px;
   padding: 35px;
-  backdrop-filter: blur(15px);
-  -webkit-backdrop-filter: blur(15px);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
 }
 
 .members-founders-card {
@@ -611,11 +659,11 @@ a {
   color: #ffffff;
   border-radius: 8px;
   transition: 0.2s ease;
-  font-family: "arvo-regular", sans-serif;
+  font-family: "fellbaum-grotesk-regular", sans-serif;
 }
 
 .members-founders-card-text-container {
-  font-family: "arvo-bold", sans-serif;
+  font-family: "fellbaum-grotesk-bold", sans-serif;
   width: fit-content;
   align-items: center;
   position: absolute;
@@ -624,16 +672,18 @@ a {
 }
 
 .services-heading {
-  font-family: "arvo-bold", sans-serif;
+  width: 91%;
+  font-family: "fellbaum-grotesk-bold", sans-serif;
   text-align: center;
   color: white;
-  background: rgba(255, 255, 255, 0);
+  background: rgba(0, 0, 0, 0.1);
   border: 1px solid rgba(255, 255, 255, 0.4);
   border-radius: 15px;
   padding: 25px;
-  backdrop-filter: blur(15px);
-  -webkit-backdrop-filter: blur(15px);
-  margin-top: 8vh;
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  margin-top: 1.5vh;
+  margin-bottom: 1vh;
   margin-left: 45px;
   margin-right: 45px;
 }
@@ -650,6 +700,24 @@ a {
 .services-heading > div {
   font-size: xx-large;
   margin-top: 2vh;
+}
+
+.services-image-container {
+  position: relative;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  width: fit-content;
+  color: white;
+  z-index: 2;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+  overflow-y: scroll;
+  margin-bottom: 1.3vh;
+}
+
+.services-image {
+  margin-top: 2vh;
+  border-radius: 5px;
 }
 
 @media only screen and (max-width: 700px) {
@@ -682,10 +750,15 @@ a {
   }
 
   .services-heading {
+    width: 80vw;
     padding: 25px;
-    margin-top: 6vh;
-    margin-left: 14px;
-    margin-right: 14px;
+    margin-top: 5vh;
+    margin-left: 4vw;
+    margin-right: 4vw;
+  }
+
+  .services-image-container {
+    display: none;
   }
 }
 
@@ -704,16 +777,15 @@ a {
   overflow-x: hidden;
   overflow-y: scroll;
   width: 50%;
-  background: rgba(255, 255, 255, 0);
+  background: rgba(0, 0, 0, 0.2);
   border-radius: 15px;
   padding: 35px;
-  box-shadow: 0 0 1px white, inset 0 0 1px white;
-  backdrop-filter: blur(15px);
-  -webkit-backdrop-filter: blur(15px);
+  box-shadow: 0 0 0.1px white, inset 0 0 1.5px white;
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
   color: white;
-  font-family: "arvo-regular", sans-serif;
+  font-family: "fellbaum-grotesk-regular", sans-serif;
   z-index: 2;
-  font-size: 1.2rem;
   -ms-overflow-style: none;
   scrollbar-width: none;
   overflow-y: scroll;
@@ -724,7 +796,7 @@ a {
 }
 
 .contact-us h1 {
-  font-family: "arvo-bold", sans-serif;
+  font-family: "fellbaum-grotesk-bold", sans-serif;
   font-size: 50px;
   margin-bottom: 18px;
 }
@@ -746,7 +818,8 @@ a {
   padding: 10px;
   border: 2.5px solid #f8000023;
   border-radius: 5px;
-  font-family: arvo-regular, sans-serif;
+  font-family: fellbaum-grotesk-regular, sans-serif;
+  font-size: 1.1em;
   transition: all 0.2s ease;
 }
 
@@ -766,7 +839,7 @@ a {
 .contact-submit {
   background-color: #f80100;
   color: white;
-  font-family: arvo-bold, sans-serif;
+  font-family: fellbaum-grotesk-bold, sans-serif;
   transition: all 0.05s linear;
   height: 6vh;
 }
@@ -790,39 +863,39 @@ a {
 
 .partner {
   position: relative;
-  height: 58vh;
+  height: 59vh;
   width: 40vw;
-  background: rgba(255, 255, 255, 0);
+  background: rgba(0, 0, 0, 0.2);
   border-radius: 15px;
   padding: 35px;
-  box-shadow: 0 0 1px white, inset 0 0 1px white;
-  backdrop-filter: blur(15px);
-  -webkit-backdrop-filter: blur(15px);
+  box-shadow: 0 0 0.1px white, inset 0 0 1.5px white;
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
   color: white;
-  font-family: "arvo-regular", sans-serif;
+  font-family: "fellbaum-grotesk-regular", sans-serif;
   z-index: 2;
-  font-size: 1.2rem;
+  font-size: 1.37rem;
   -ms-overflow-style: none;
   scrollbar-width: none;
   margin-top: 30px;
   margin-right: 1vw;
-  overflow: auto;
+  overflow: hidden;
 }
 
 .partner2 {
   position: relative;
   height: 60vh;
   width: 120vw;
-  background: rgba(255, 255, 255, 0);
+  background: rgba(0, 0, 0, 0.2);
   border-radius: 15px;
   padding: 35px;
-  box-shadow: 0 0 1px white, inset 0 0 1px white;
-  backdrop-filter: blur(15px);
-  -webkit-backdrop-filter: blur(15px);
+  box-shadow: 0 0 0.1px white, inset 0 0 1.5px white;
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
   color: white;
-  font-family: "arvo-regular", sans-serif;
+  font-family: "fellbaum-grotesk-regular", sans-serif;
   z-index: 2;
-  font-size: 1.2rem;
+  font-size: 1.4rem;
   -ms-overflow-style: none;
   scrollbar-width: none;
   margin-left: 1vw;
@@ -834,14 +907,14 @@ a {
 }
 
 .partner h1 {
-  font-family: "arvo-bold", sans-serif;
-  font-size: 35px;
+  font-family: "fellbaum-grotesk-bold", sans-serif;
+  font-size: 40px;
   margin-bottom: 20px;
 }
 
 .partner2 h1 {
-  font-family: "arvo-bold", sans-serif;
-  font-size: 35px;
+  font-family: "fellbaum-grotesk-bold", sans-serif;
+  font-size: 40px;
   margin-bottom: 15px;
 }
 
@@ -917,31 +990,22 @@ ul {
   position: relative;
   overflow-x: hidden;
   overflow-y: scroll;
-  height: 62%;
-  width: 50%;
-  background: rgba(255, 255, 255, 0);
-  border-radius: 15px;
   padding: 35px;
-  box-shadow: 0 0 1px white, inset 0 0 1px white;
-  backdrop-filter: blur(15px);
-  -webkit-backdrop-filter: blur(15px);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
   color: white;
-  font-family: "arvo-regular", sans-serif;
+  font-family: "fellbaum-grotesk-regular", sans-serif;
   z-index: 2;
-  font-size: 1.2rem;
   -ms-overflow-style: none;
   scrollbar-width: none;
-  overflow-y: scroll;
+  overflow-y: hidden;
   margin-top: 6vh;
-}
-
-.contact-details {
   height: 20vh;
-  width: 88%;
-  background: rgba(255, 255, 255, 0);
+  width: 93%;
+  background: rgba(0, 0, 0, 0.2);
   border-radius: 15px;
-  box-shadow: 0 0 1px white, inset 0 0 1px white;
-  font-size: 1.5rem;
+  box-shadow: 0 0 0.1px white, inset 0 0 1.5px white;
+  font-size: 1.7rem;
   text-align: center;
   align-content: center;
 }
@@ -960,11 +1024,11 @@ ul {
     margin-left: 1vw;
     margin-right: 1vw;
     margin-top: 1.5vh;
-    margin-bottom: 4.5vh;
+    margin-bottom: 3vh;
   }
 
   .contact-us {
-    width: 80%;
+    width: 92%;
   }
 
   .contact {
@@ -977,12 +1041,17 @@ ul {
 
   .contact-details {
     height: 20vh;
-    width: 78%;
-    font-size: 1.49rem;
+    width: 92%;
+    font-size: 1.8rem;
+    margin-top: 2.5vh;
   }
 
   .contact-details > p {
     margin-top: 32px;
     margin-bottom: 32px;
+  }
+
+  .contact-input {
+    font-size: large;
   }
 }

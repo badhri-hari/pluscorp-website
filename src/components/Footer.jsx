@@ -30,31 +30,25 @@ export default function Footer() {
         <footer>
           {isSmallerScreen ? (
             <>
-              <HStack className="glassmorphism-footer" padding={"10px"}>
-                <img src="/pluscorp-logo.png" className="footer-logo"></img>
-                <VStack>
-                  <div className="footer-text-container">
-                    Website Visits: {visitCount}
-                  </div>
-                </VStack>
-              </HStack>
-              <div className="footer-text-container copyright">
-                ©2024 by Pluscorp Consulting Private Limited
-              </div>
+              <VStack padding={"10px"}>
+                <div className="footer-text-container">
+                  Website Visits: {visitCount}
+                </div>
+                <div className="footer-text-container copyright">
+                  ©2024 by Pluscorp Consulting Private Limited
+                </div>
+              </VStack>
             </>
           ) : (
             <>
-              <HStack className="glassmorphism-footer" padding={"10px"}>
-                <img src="/pluscorp-logo.png" className="footer-logo"></img>
-                <VStack>
-                  <div className="footer-text-container">
-                    Website Visits: {visitCount}
-                  </div>
-                </VStack>
+              <HStack padding={"10px"}>
+                <div className="footer-text-container">
+                  Website Visits: {visitCount}
+                </div>
+                <div className="footer-text-container copyright">
+                  ©2024 by Pluscorp Consulting Private Limited
+                </div>
               </HStack>
-              <div className="footer-text-container copyright">
-                ©2024 by Pluscorp Consulting Private Limited
-              </div>
             </>
           )}
         </footer>
