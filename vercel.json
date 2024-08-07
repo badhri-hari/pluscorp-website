@@ -2,10 +2,10 @@
   "rewrites": [{ "source": "/(.*)", "destination": "/" }],
   "functions": {
     "api/count.js": {
-      "maxDuration": 90
+      "maxDuration": 60
     },
     "api/contact.js": {
-      "maxDuration": 90
+      "maxDuration": 60
     }
   },
   "headers": [
