@@ -2,6 +2,8 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { HelmetProvider } from "react-helmet-async";
+import { inject } from "@vercel/analytics";
+import { injectSpeedInsights } from "@vercel/speed-insights";
 
 import "./App.css";
 
@@ -9,6 +11,9 @@ import Home from "./pages/Home.jsx";
 import Partner from "./pages/Partner.jsx";
 import Services from "./pages/Services.jsx";
 import Contact from "./pages/Contact.jsx";
+
+inject();
+injectSpeedInsights();
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
