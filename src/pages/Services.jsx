@@ -85,20 +85,6 @@ export default function Services() {
               src="/services-image.webp"
             />
           </div>
-          <div className="members-founders-container">
-            {services.map((service, index) => (
-              <div key={index} className="members-founders-card">
-                <div className="members-founders-card-container">
-                  <div className="members-founders-card-text-container">
-                    <h1>{service.name}</h1>
-                    <p>{service.info}</p>
-                    <br />
-                    <p>{service.detail}</p>
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
         </VStack>
       </Center>
       <Footer />
