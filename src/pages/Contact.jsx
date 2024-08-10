@@ -89,7 +89,11 @@ export default function Contact() {
             className="contact-us-component"
           >
             <div className="rectangle contact">
-              <img src="/contact.webp" alt="About Us Image 2" />
+              <img
+                src="./contact.jpeg"
+                alt="About Us Image 2"
+                style={{ width: "fit-content", transform: "translateX(16%)" }}
+              />
             </div>
             <div className="contact-us">
               <h1>Contact Us!</h1>

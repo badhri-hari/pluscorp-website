@@ -67,30 +67,43 @@ export default function Partner() {
             <div className="partner">
               <h1>Core Methodology</h1>
               <div>
-                <ul>
+                <ul style={{ listStyle: "none" }}>
                   <li>
+                    <span className="li" />
                     Deliver basis Organization requirement and values –
                     Understand the Organization Business, Style, Requirement and
                     Criticality first before scouting
                   </li>
                   <br />
                   <li>
+                    <span className="li" />
                     Determined to keep standards high – Maintain Quality of
                     candidates with high strike rate
                   </li>
                   <br />
                   <li>
+                    <span className="li" />
                     Solution Based - Tailored recruitment to suit your
                     requirements
                   </li>
                   <br />
-                  <li>Result Focused – Ensure high % success factor</li>
-                  <br />
-                  <li>Repeat Business – Maintain high Quality standards</li>
-                  <br />
-                  <li>Partnering Approach - 1 point of contact, Pan India</li>
+                  <li>
+                    <span className="li" />
+                    Result Focused – Ensure high % success factor
+                  </li>
                   <br />
                   <li>
+                    <span className="li" />
+                    Repeat Business – Maintain high Quality standards
+                  </li>
+                  <br />
+                  <li>
+                    <span className="li" />
+                    Partnering Approach - 1 point of contact, Pan India
+                  </li>
+                  <br />
+                  <li>
+                    <span className="li" />
                     Extensive use of Social media – LinkedIn, Facebook etc
                   </li>
                 </ul>

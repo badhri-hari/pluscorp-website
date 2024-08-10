@@ -372,6 +372,18 @@ nav,
   -ms-overflow-style: none;
   scrollbar-width: none;
   scroll-snap-type: y mandatory;
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+}
+
+.li {
+  display: inline-block;
+  width: 9px;
+  height: 9px;
+  background: linear-gradient(to right, #f84a00, #f80100);
+  border-radius: 50%;
+  margin-right: 8px;
+  margin-bottom: 2px;
 }
 
 .about-mission-overlay::-webkit-scrollbar {
@@ -725,7 +737,7 @@ a {
   -ms-overflow-style: none;
   scrollbar-width: none;
   overflow-y: scroll;
-  margin-bottom: 1.3vh;
+  margin-bottom: 2.5vh;
 }
 
 .services-image {

@@ -1,11 +1,18 @@
+import { useEffect } from "react";
 import { VStack } from "@chakra-ui/react";
-
 import Head from "../components/Head";
 import Footer from "../components/Footer";
 import Nav from "../components/Nav";
 import Cursor from "../components/Cursor";
 
 export default function Home() {
+  useEffect(() => {
+    const overlay = document.querySelector(".about-mission-overlay");
+    if (overlay) {
+      overlay.style.opacity = 1;
+    }
+  }, []);
+
   return (
     <>
       <Head
