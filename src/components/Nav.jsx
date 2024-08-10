@@ -269,7 +269,7 @@ export default function Nav() {
                     rel="noreferrer"
                   >
                     <IoAtSharp
-                      color="white"
+                      color="red"
                       size="2em"
                       className="nav-email-container-mobile"
                     />
@@ -280,7 +280,7 @@ export default function Nav() {
                     rel="noreferrer"
                   >
                     <FaLinkedin
-                      color="white"
+                      color="#0072b1"
                       size="2em"
                       className="nav-signup-container-mobile"
                     />
@@ -291,7 +291,7 @@ export default function Nav() {
                     rel="noreferrer"
                   >
                     <FaInstagram
-                      color="white"
+                      color="#ff6e6e"
                       size="2em"
                       className="nav-instagram-container-mobile"
                     />
@@ -302,7 +302,7 @@ export default function Nav() {
                     rel="noreferrer"
                   >
                     <FaFacebook
-                      color="white"
+                      color="#386cf4"
                       size="2em"
                       className="nav-signup-container-mobile"
                     />
