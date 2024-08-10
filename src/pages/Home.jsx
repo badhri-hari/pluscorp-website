@@ -21,6 +21,13 @@ export default function Home() {
       </video>
 
       <VStack className="about-mission-overlay">
+        <div className="home-image-container">
+          <img
+            src="./pluscorp-logo.png"
+            alt="Home Page Pluscorp Logo"
+            className="home-image"
+          />
+        </div>
         <div className="about-us-component">
           <div className="about-us">
             <p

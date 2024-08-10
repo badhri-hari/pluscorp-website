@@ -345,6 +345,19 @@ nav,
   margin-top: 6vh;
 }
 
+.home-image-container {
+  z-index: 1999;
+  margin-top: 1%;
+  margin-bottom: -1.7%;
+}
+
+.home-image {
+  z-index: 1999;
+  height: 130px;
+  aspect-ratio: 1;
+  border-radius: 100%;
+}
+
 .about-mission-overlay {
   height: 80vh;
   width: 100%;
