@@ -8,6 +8,7 @@ import { injectSpeedInsights } from "@vercel/speed-insights";
 import "./App.css";
 
 import Home from "./pages/Home.jsx";
+import About from "./pages/About.jsx";
 import Partner from "./pages/Partner.jsx";
 import Services from "./pages/Services.jsx";
 import Contact from "./pages/Contact.jsx";
@@ -22,6 +23,7 @@ root.render(
       <Router>
         <Routes>
           <Route path="*" element={<Home />} />
+          <Route path="/about" element={<About />} />
           <Route path="/partner" element={<Partner />} />
           <Route path="/services" element={<Services />} />
           <Route path="/contact" element={<Contact />} />

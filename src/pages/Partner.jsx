@@ -24,42 +24,6 @@ export default function Partner() {
             direction={["column", "row"]}
             divider={<StackDivider borderColor="gray.200" />}
             className="partner-component"
-            style={{ marginTop: "15px" }}
-          >
-            <div className="rectangle partner-image2">
-              <img src="/home1.webp" alt="About Us Image 2" />
-            </div>
-            <div className="partner2">
-              <h1>Our Mission</h1>
-              <p>
-                We started this great Venture in 2016. Pluscorp is a sector
-                agnostic full service Finance Consulting & Recruitment practice
-                that endeavors to exercise original thought to deliver
-                meaningful insights that meet and exceed client expectations.
-                Our partner driven boutique approach ensures that we constantly
-                push the envelope to offer unique and customized solutions that
-                put client needs first.
-              </p>
-              <br />
-              <p>
-                About the Founder: Raghuraman Chandrasekaran (aka) Raghu is a
-                Chartered Accountant and a Management Accountant by
-                Qualification. He formed Pluscorp Consulting in 2016 after
-                successful stints in Wipro, ICICI, Satyam, CSC and Sutherland
-                spanning to 2 decades. A thorough rounded professional with a
-                Six Sigma Greenbelt certification who also possesses wide range
-                of experience in multiple Industries like Finance, Banking,
-                Treasury, Core Banking, BPO and Audit verticals. Very well
-                networked and has managed large teams. He has an extensive
-                Outsourcing experience both in Captive and Third party
-                environments.
-              </p>
-            </div>
-          </Stack>
-          <Stack
-            direction={["column", "row"]}
-            divider={<StackDivider borderColor="gray.200" />}
-            className="partner-component"
           >
             <div className="partner">
               <h1>Core Methodology</h1>

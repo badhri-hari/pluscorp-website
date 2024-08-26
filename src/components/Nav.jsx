@@ -45,6 +45,14 @@ export default function Nav() {
                 Home
               </NavLink>
               <NavLink
+                to="/about"
+                className={({ isActive }) =>
+                  `nav-links-desktop ${isActive ? "active" : ""}`
+                }
+              >
+                About Us
+              </NavLink>
+              <NavLink
                 to="/partner"
                 className={({ isActive }) =>
                   `nav-links-desktop ${isActive ? "active" : ""}`
@@ -160,6 +168,15 @@ export default function Nav() {
                   onClick={onClose}
                 >
                   Home
+                </NavLink>
+                <NavLink
+                  to="/about"
+                  className={({ isActive }) =>
+                    `nav-links-mobile ${isActive ? "active" : ""}`
+                  }
+                  onClick={onClose}
+                >
+                  About Us
                 </NavLink>
                 <NavLink
                   to="/partner"
