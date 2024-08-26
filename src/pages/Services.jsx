@@ -2,7 +2,6 @@ import Head from "../components/Head";
 import Footer from "../components/Footer";
 import Nav from "../components/Nav";
 import { Center, VStack } from "@chakra-ui/react";
-import Cursor from "../components/Cursor";
 
 export default function Services() {
   const services = [
@@ -60,7 +59,6 @@ export default function Services() {
         description="Pluscorp Consulting offers a wide range of consulting services for several industries. We’ve got the necessary tools and expertise to help you grow your business, and learn how to properly manage your expansion, or your next project. We partner with our clients to develop engaging business strategies, design high quality and scalable solutions, and build rich brand experiences."
       />
       <Nav />
-      <Cursor />
       <video alt="Background Video" className="video" autoPlay muted loop>
         <source src="/services-video.mp4" type="video/mp4" />
       </video>

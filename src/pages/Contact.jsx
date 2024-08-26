@@ -4,7 +4,6 @@ import axios from "axios";
 import Nav from "../components/Nav";
 import Footer from "../components/Footer";
 import Head from "../components/Head";
-import Cursor from "../components/Cursor";
 
 export default function Contact() {
   const [formData, setFormData] = useState({
@@ -59,7 +58,6 @@ export default function Contact() {
         description="Pluscorp Consulting offers a wide range of consulting services for several industries. We’ve got the necessary tools and expertise to help you grow your business, and learn how to properly manage your expansion, or your next project. We partner with our clients to develop engaging business strategies, design high quality and scalable solutions, and build rich brand experiences."
       />
       <Nav />
-      <Cursor />
       <Center>
         <video
           alt="Background Video"

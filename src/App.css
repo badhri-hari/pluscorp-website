@@ -12,14 +12,9 @@
 
 * {
   margin: 0;
-  cursor: none;
   --rt-color-info: #f80100;
   --rt-opacity: 1;
   font-family: "fellbaum-grotesk-regular", sans-serif;
-}
-
-a {
-  cursor: none;
 }
 
 :focus {
@@ -201,6 +196,7 @@ nav,
   border-radius: 5px;
   transition: all 0.05s linear;
   background: white;
+  cursor: none;
 }
 
 .nav-email-container-desktop:hover,
@@ -225,27 +221,6 @@ nav,
   display: none;
 }
 
-.blob {
-  background-color: black;
-  height: 25px;
-  aspect-ratio: 1;
-  position: fixed;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
-  border-radius: 50%;
-  background: linear-gradient(to right, #f84a00, #f80100);
-  z-index: 2000;
-  transition: all 0.08s linear;
-  transition: opacity 0.18s linear;
-  pointer-events: none;
-}
-
-.blob.active {
-  transform: translate(-50%, -50%) scale(1.2);
-  pointer-events: none;
-}
-
 .video {
   position: fixed;
   top: 0;
@@ -257,7 +232,7 @@ nav,
   transform: translateX(10%);
 }
 
-@media only screen and (max-width: 805px) {
+@media only screen and (max-width: 1005px) {
   .header-container {
     margin-bottom: 2vh;
   }
@@ -331,10 +306,8 @@ nav,
   }
 }
 
-@media (pointer: coarse) and (hover: none) {
-  .blob {
-    opacity: 0;
-  }
+.blob {
+  opacity: 0;
 }
 
 .home-container {

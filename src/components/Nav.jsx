@@ -13,84 +13,10 @@ import { HamburgerIcon } from "@chakra-ui/icons";
 import { FaInstagram, FaLinkedin, FaFacebook } from "react-icons/fa";
 import { IoAtSharp, IoCloseOutline } from "react-icons/io5";
 import { Tooltip } from "react-tooltip";
-import { useEffect } from "react";
 import { NavLink } from "react-router-dom";
 
 export default function Nav() {
   const { isOpen, onOpen, onClose } = useDisclosure();
-
-  useEffect(() => {
-    const elements = document.querySelectorAll(
-      ".nav-email-container-desktop, .nav-instagram-container-desktop, .nav-signup-container-desktop, .nav-links-desktop"
-    );
-    const blob = document.querySelector(".blob");
-
-    const handleMouseEnter = () => {
-      if (blob) blob.style.opacity = "0";
-    };
-
-    const handleMouseLeave = () => {
-      if (blob) blob.style.opacity = "1";
-    };
-
-    elements.forEach((item) => {
-      item.addEventListener("mouseenter", handleMouseEnter);
-      item.addEventListener("mouseleave", handleMouseLeave);
-    });
-
-    const header = document.querySelector(".header-container");
-    const links = document.querySelectorAll(".nav-links-desktop");
-
-    const handleMouseMove = (e) => {
-      const headerRect = header.getBoundingClientRect();
-      if (e.clientY <= headerRect.bottom && e.clientY >= headerRect.top) {
-        let closestLink = null;
-        let closestDistance = Infinity;
-        const snapThreshold = 0;
-
-        links.forEach((link) => {
-          const linkRect = link.getBoundingClientRect();
-          const distance = Math.abs(
-            e.clientX - linkRect.left - linkRect.width / 2
-          );
-
-          if (distance < closestDistance) {
-            closestDistance = distance;
-            closestLink = link;
-          }
-        });
-
-        const cursor = document.querySelector(".blob");
-        if (closestLink && closestDistance < snapThreshold) {
-          const linkRect = closestLink.getBoundingClientRect();
-          const snapX = linkRect.left + linkRect.width / 2;
-          const snapY = linkRect.top + linkRect.height / 2;
-
-          if (cursor) {
-            cursor.style.transition = "left 0.2s ease, top 0.2s ease";
-            cursor.style.left = `${snapX}px`;
-            cursor.style.top = `${snapY}px`;
-          }
-        } else {
-          if (cursor) {
-            cursor.style.transition = "left 0.1s ease, top 0.1s ease";
-            cursor.style.left = `${e.clientX}px`;
-            cursor.style.top = `${e.clientY}px`;
-          }
-        }
-      }
-    };
-
-    header.addEventListener("mousemove", handleMouseMove);
-
-    return () => {
-      elements.forEach((item) => {
-        item.removeEventListener("mouseenter", handleMouseEnter);
-        item.removeEventListener("mouseleave", handleMouseLeave);
-      });
-      header.removeEventListener("mousemove", handleMouseMove);
-    };
-  }, []);
 
   return (
     <>
